@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/liminshen/.nvm/versions/node/v14.17.3/bin/node /Users/liminshen/.yarn/bin/yarn.js add -D @tarojs/cli
+  /Users/liminshen/.nvm/versions/node/v14.17.3/bin/node /Users/liminshen/.yarn/bin/yarn.js install
 
 PATH: 
   /Users/liminshen/.yarn/bin:/Users/liminshen/.config/yarn/global/node_modules/.bin:/Users/liminshen/.nvm/versions/node/v14.17.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Users/liminshen/.yarn/bin:/Users/liminshen/.config/yarn/global/node_modules/.bin:/Users/liminshen/.nvm/versions/node/v14.17.3/bin:/Users/liminshen/qicheng/www/jsp/environment/apache-maven-3.2.3/bin:/Users/liminshen/qicheng/www/jsp/environment/apache-maven-3.2.3/bin
@@ -14,7 +14,7 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: https://registry.npm.taobao.org/taro-http: Not found
+  Error: https://registry.npmmirror.com/adorn-http: Not found
       at Request.params.callback [as _callback] (/Users/liminshen/.yarn/lib/cli.js:66987:18)
       at Request.self.callback (/Users/liminshen/.yarn/lib/cli.js:140748:22)
       at Request.emit (events.js:375:28)
@@ -69,9 +69,11 @@ npm manifest:
       "@tarojs/react": "3.3.9",
       "@tarojs/runtime": "3.3.9",
       "@tarojs/taro": "3.3.9",
+      "adorn-http": "^1.0.0",
       "react": "^17.0.0",
       "react-dom": "^17.0.0",
-      "taro-http": "^1.0.0"
+      "shared-utils": "^1.0.0",
+      "taro-ui-block": "^1.0.0"
     },
     "devDependencies": {
       "@babel/core": "^7.8.0",
