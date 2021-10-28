@@ -1,0 +1,23 @@
+{
+  "name": "adorn-http",
+  "version": "1.0.0",
+  "private": true,
+  "description": "multiport http decorate",
+  "main": "./src/index",
+  "templateInfo": {
+    "name": "default",
+    "typescript": true,
+    "css": "sass"
+  },
+  "scripts": {
+  },
+  "browserslist": [
+    "last 3 versions",
+    "Android >= 4.1",
+    "ios >= 8"
+  ],
+  "author": "sam.li",
+  "dependencies": {
+    "@tarojs/taro": "3.3.9"
+  }
+}
