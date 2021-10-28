@@ -1,6 +1,6 @@
 {
   "name": "adorn-http",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "private": true,
   "description": "multiport http decorate",
   "main": "./src/index",
@@ -9,8 +9,7 @@
     "typescript": true,
     "css": "sass"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "browserslist": [
     "last 3 versions",
     "Android >= 4.1",
