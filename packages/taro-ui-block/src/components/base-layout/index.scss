@@ -1,0 +1,14 @@
+.StBaseLayout-wrapper {
+    // position: fixed;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    .StBaseLayout-wrapper_container {
+        flex: 1;
+        overflow: hidden;
+    }
+    .StBaseLayout-wrapper_scrollContainer {
+        height: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+}

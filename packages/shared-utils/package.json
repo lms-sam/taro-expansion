@@ -13,5 +13,6 @@
   "license": "MIT",
   "dependencies": {
     "@tarojs/taro": "^3.3.10"
-  }
+  },
+  "gitHead": "2b6ffb5966ccbd44e262f9f32abeaf9733295407"
 }

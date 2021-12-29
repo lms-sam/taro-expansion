@@ -8,5 +8,10 @@
   "devDependencies": {
     "@tarojs/cli": "^3.3.9",
     "lerna": "^4.0.0"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
   }
 }

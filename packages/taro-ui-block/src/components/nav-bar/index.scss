@@ -1,0 +1,96 @@
+.StNavBar-wrapper {
+    z-index: 1000;
+    width: 100vw;
+    transition: all 0.2s linear;
+    position: relative;
+    padding-top: 44px;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
+    height: 60px;
+    // display: flex;
+    // align-items: center;
+    background: #fff;
+    padding-bottom: 6px;
+    box-sizing: content-box;
+
+    &.transparency {
+        background: transparent;
+
+        .StNavBar-wrapper_back-btn {
+            // background-color: rgba(0 ,0 ,0 ,0.4);
+
+            .iconfontBiz {
+                color: #fff;
+                font-size: 30px;
+            }
+        }
+
+        .StNavBar-wrapper_title-con {
+            color: #fff;
+        }
+    }
+
+    &.fixed {
+        position: fixed;
+    }
+
+    .StNavBar-wrapper_back-btn {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+        border-radius: 50%;
+        // position: absolute;
+        // top: 0;
+        // left: 30px;
+        text-align: center;
+
+        .iconfontBiz {
+            color: #000;
+            font-size: 30px;
+        }
+    }
+
+    .StNavBar-wrapper_content-con {
+        position: absolute;
+        left: 0;
+        top: 0;
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding-top: 44px;
+        padding-top: constant(safe-area-inset-top);
+        padding-top: env(safe-area-inset-top);
+
+        .StNavBar-wrapper_content {
+            flex: 1;
+        }
+    }
+
+    .StNavBar-wrapper_title-con {
+        text-align: center;
+        font-size: 34px;
+        color: #000;
+        font-weight: 500;
+        flex: 1;
+        line-height: 64px;
+    }
+
+    .StNavBar-wrapper_right-btn {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+        // top: 50%;
+        // transform: translateY(-50%);
+        height: 60px;
+        display: flex;
+        justify-content: right;
+        align-items: center;
+
+        .iconImg {
+            width: 40px;
+            height: 40px;
+        }
+    }
+}
