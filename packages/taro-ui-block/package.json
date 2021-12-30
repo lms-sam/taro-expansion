@@ -1,6 +1,6 @@
 {
   "name": "@gestate/taro-st-ui",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "description": "block-ui for taro",
   "main": "dist/index.js",
