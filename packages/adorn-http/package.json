@@ -1,6 +1,6 @@
 {
   "name": "adorn-http",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "description": "multiport http decorate",
   "main": "./src/index",

@@ -1,6 +1,6 @@
 {
   "name": "demo2.0",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "private": true,
   "description": "demo for taro2.0",
   "templateInfo": {
@@ -48,7 +48,7 @@
     "nerv-devtools": "^1.5.5",
     "nervjs": "^1.5.5",
     "regenerator-runtime": "0.11.1",
-    "taro-ui-block": "^0.0.1"
+    "taro-ui-block": "^0.0.3"
   },
   "devDependencies": {
     "@tarojs/mini-runner": "2.2.10",
