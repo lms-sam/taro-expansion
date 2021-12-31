@@ -2,9 +2,11 @@ import Taro from "@tarojs/taro";
 import { View, Text } from "@tarojs/components";
 import classnames from "classnames";
 import PropTypes, { InferProps } from "prop-types";
-import { StNavBarProps, StNavBarState } from "types/navbar";
+import { StNavBarProps, StNavBarState } from "types/nav-bar";
 import { redirectTo, back } from "@/common/router";
 import StComponent from "../../common/component";
+import {getMenuButton} from '../../utils/getMenuButton'
+import getCurrentRoute from "../../common/getCurrentRoute";
 import "./index.scss";
 
 export default class StNavBar extends StComponent<
@@ -22,9 +24,12 @@ export default class StNavBar extends StComponent<
     };
   }
   private _curPages = Taro.getCurrentPages();
-  private _curPage = "";
+  private _curPage = getCurrentRoute();
   public componentDidMount(): void {
     const { entiesRoute = [] } = this.props;
+    this.setState({
+      menuButtonInfo: getMenuButton()
+    })
     if (process.env.TARO_ENV === "h5") {
       this.props.initFn && this.props.initFn();
     }
@@ -41,7 +46,7 @@ export default class StNavBar extends StComponent<
       }
     }
   }
-  private handleBack() {
+  private handleBack = () => {
     const { redirectUrl } = this.props;
     if (redirectUrl) {
       redirectTo({
@@ -100,7 +105,7 @@ export default class StNavBar extends StComponent<
               className="StNavBar-wrapper_back-btn"
               onClick={this.handleBack}
             >
-              <Text className="iconfontBiz iconfanhui"></Text>
+              <Text className="st-iconfont icon-fanhui1"></Text>
             </View>
           )}
           {isShowCon && (

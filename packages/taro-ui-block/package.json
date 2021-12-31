@@ -1,16 +1,19 @@
 {
   "name": "@gestate/taro-st-ui",
-  "version": "0.0.7",
-  "private": true,
+  "version": "0.0.14",
+  "private": false,
   "description": "block-ui for taro",
   "main": "dist/index.js",
   "main:h5": "dist/h5/index.js",
+  "types": "./types/index.d.ts",
   "templateInfo": {
     "name": "default",
     "typescript": true,
     "css": "sass"
   },
   "scripts": {
+    "dev:h5": "npm run build:h5 -- --watch",
+    "dev:weapp": "npm run build:weapp -- --watch",
     "build:component": "TARO_BUILD_TYPE=ui taro build --ui --ui-index=weapp",
     "build:weapp": "taro build --type weapp",
     "build:swan": "taro build --type swan",
@@ -21,11 +24,9 @@
     "build:qq": "taro build --type qq",
     "build:jd": "taro build --type jd",
     "build:quickapp": "taro build --type quickapp",
-    "dev:weapp": "npm run build:weapp -- --watch",
     "dev:swan": "npm run build:swan -- --watch",
     "dev:alipay": "npm run build:alipay -- --watch",
     "dev:tt": "npm run build:tt -- --watch",
-    "dev:h5": "npm run build:h5 -- --watch",
     "dev:rn": "npm run build:rn -- --watch",
     "dev:qq": "npm run build:qq -- --watch",
     "dev:jd": "npm run build:jd -- --watch",

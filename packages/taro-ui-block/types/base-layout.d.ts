@@ -1,7 +1,7 @@
 import StComponent from "./base";
 import { MouseEvent, ComponentClass } from "react";
 import { CommonEventFunction, BaseEventOrig, Target } from "@tarojs/components/types/common";
-import { StNavBarProps } from "./navbar";
+import { StNavBarProps } from "./nav-bar";
 
 export interface StBaseLayoutProps extends StComponent {
   /**
@@ -12,6 +12,10 @@ export interface StBaseLayoutProps extends StComponent {
    * 顶部导航栏颜色 & 状态栏颜色
    */
   barStyle?: "black" | "white";
+  /**
+   * 是否隐藏导航栏
+   */
+  isHideNav?:  boolean;
     /**
      * 是否改变状态栏颜色
      */
@@ -44,6 +48,10 @@ export interface StBaseLayoutProps extends StComponent {
    * 底部固定区，常驻在底部，压缩内容区
    */
   renderBottom?: JSX.Element | undefined;
+  /**
+   * h5的右边分享区
+   */
+  renderRightCon?: JSX.Element | undefined;
   /**
    * 透传导航栏参数
    */

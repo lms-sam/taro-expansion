@@ -2,9 +2,8 @@ import Taro from "@tarojs/taro";
 import { View, ScrollView, Text } from "@tarojs/components";
 import classnames from "classnames";
 import PropTypes, { InferProps } from "prop-types";
-import { BaseEventOrig } from "@tarojs/components/types/common";
 import { StBaseLayoutProps, StBaseLayoutState, ScrollEvent } from "types/base-layout";
-import StComponent from "@/common/component";
+import StComponent from "../../common/component";
 import NavBar from "../nav-bar";
 
 import "./index.scss";
@@ -38,12 +37,11 @@ export default class StBaseLayout extends StComponent<
   }
 
   private handleScroll = (event: ScrollEvent) => {
-    console.log(event);
     this.props.onScroll && this.props.onScroll(event);
     const {
       isFullScreen,
       barStyle,
-      scrollTopBoundary,
+      scrollTopBoundary = 21,
       isToggleBarStyle,
     } = this.props;
     if (!isFullScreen) return;
@@ -63,24 +61,25 @@ export default class StBaseLayout extends StComponent<
       isNavFixed,
       isNavTransparency,
       layoutScrollTop,
-      pageTitle,
+      pageTitle
     } = this.state;
     const {
       contentClass,
       className,
       navOptions,
       isHideTitleBeforeToggle,
+      isHideNav
     } = this.props;
     return (
       <View className={classnames("StBaseLayout-wrapper", className)}>
-        <NavBar
+        {!isHideNav && <NavBar
           title={isNavTransparency && isHideTitleBeforeToggle ? "" : pageTitle}
           isFix={isNavFixed}
           isTransparency={isNavTransparency}
           {...navOptions}
           isShowRight={true}
-          renderRightCon={<Text>test</Text>}
-        />
+          renderRightCon={this.props.renderRightCon}
+        />}
         {this.props.renderTop}
         <View className={classnames("StBaseLayout-wrapper_container", contentClass)}>
           {process.env.TARO_ENV === "weapp" && (
@@ -113,6 +112,7 @@ export default class StBaseLayout extends StComponent<
 
 StBaseLayout.defaultProps = {
   title: "",
+  isHideNav: false,
   scrollTopBoundary: 21,
   contentClass: "",
   className: "",
@@ -123,6 +123,7 @@ StBaseLayout.defaultProps = {
   isToggleBarStyle: false,
   renderTop: undefined,
   renderBottom: undefined,
+  renderRightCon: undefined,
 };
 StBaseLayout.propTypes = {
   title: PropTypes.string,
@@ -132,8 +133,10 @@ StBaseLayout.propTypes = {
   navOptions: PropTypes.object,
   isHideTitleBeforeToggle: PropTypes.bool,
   isFullScreen: PropTypes.bool,
+  isHideNav: PropTypes.bool,
   barStyle: PropTypes.string,
   isToggleBarStyle: PropTypes.bool,
   renderTop: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   renderBottom: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  renderRightCon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 };

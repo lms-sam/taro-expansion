@@ -4,7 +4,7 @@
  * @LastEditTime: 2020-03-26 15:10:01
  */
 // 获取胶囊位置
-import globalData from '@/common/globalData';
+import globalData from '../common/globalData';
 import Taro from '@tarojs/taro'
 const defaultRect = {
     top: 26,

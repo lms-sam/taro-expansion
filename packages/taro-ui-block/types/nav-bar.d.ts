@@ -46,7 +46,7 @@ export interface StNavBarProps extends StComponent {
     /**
      * 右侧胶囊区的按钮，用于h5
      */
-     renderRightCon?: JSX.Element | undefined;
+    renderRightCon?: JSX.Element | undefined;
 }
 
 export interface StNavBarState {

@@ -42,7 +42,19 @@ export default class Index extends Component {
     const bottom = <View>bottom</View>;
     return (
       <View className="index">
-        <BaseLayout title="我的标题" renderTop={bbb} renderBottom={bottom}>
+        <BaseLayout
+          title="我的标题"
+          renderTop={bbb}
+          renderBottom={bottom}
+          className="abc"
+          contentClass="content-class"
+          navOptions={{
+            entiesRoute: ['/pages/index/index'],
+            firstPageBack: ()=>{
+              console.log('back');
+            }
+          }}
+        >
           <Swiper
             className="test-h"
             indicatorColor="#999"

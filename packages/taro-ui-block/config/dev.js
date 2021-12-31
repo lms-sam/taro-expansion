@@ -4,5 +4,10 @@ module.exports = {
   },
   defineConstants: {},
   mini: {},
-  h5: {}
+  h5: {
+    enableExtract: true,
+    devServer: {
+      port: 8080,
+    }
+  }
 }
