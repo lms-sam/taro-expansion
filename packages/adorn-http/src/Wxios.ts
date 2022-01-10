@@ -7,20 +7,23 @@
 import utils from './utils'
 import dispatchRequest from './dispatchRequest'
 import InterceptorManger from './InterceptorManger'
+import {configInterface} from 'types/index';
 
 interface configFac {
-    method?: string,
-    data?: Object
-    url: string,
-    headers?: Object
-    
+    method?: string;
+    data?: Object;
+    url: string;
+    headers?: Object;
 }
 export default class Wxios {
     handlers = [];
     interceptors = {}
-    defaults = {}
+    defaults = {
+        url: '',
+        method: 'get',
+    }
     getTaskCallBackQueue = []
-    constructor(config: configFac) {
+    constructor(config: configInterface) {
         this.defaults = config;
         this.interceptors = {
             request: new InterceptorManger(),
@@ -38,7 +41,6 @@ export default class Wxios {
                 arguments[1] || {},
             );
         }
-    
         config = utils.merge(
             {},
             this.defaults,
@@ -48,19 +50,15 @@ export default class Wxios {
             config,
         );
         config.method = config.method.toLowerCase();
-    
         var chain = [dispatchRequest, undefined];
         var promise = Promise.resolve(config);
-    
         this.interceptors.request.forEach((interceptor) => {
             _httpPromiseIndex++;
             chain.unshift(interceptor.fulfilled, interceptor.rejected);
         });
-    
         this.interceptors.response.forEach((interceptor) => {
             chain.push(interceptor.fulfilled, interceptor.rejected);
         });
-    
         while (chain.length) {
             promise = promise.then(chain.shift(), chain.shift());
             _httpPromiseIndex--;
@@ -70,8 +68,7 @@ export default class Wxios {
                 }); // 执行注入的获取task回调函数
             }
         }
-    
-        return promise; 
+        return promise;
     }
 }
 

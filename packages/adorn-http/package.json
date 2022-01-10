@@ -4,6 +4,7 @@
   "private": true,
   "description": "multiport http decorate",
   "main": "./src/index",
+  "types": "./types/index.d.ts",
   "templateInfo": {
     "name": "default",
     "typescript": true,

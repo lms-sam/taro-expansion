@@ -4,3 +4,7 @@
  * @LastEditors: sam.li
  * @LastEditTime: 2021-10-13 14:10:54
  */
+export default {
+    url: '',
+    method: 'get',
+}

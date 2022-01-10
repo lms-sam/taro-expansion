@@ -8,7 +8,7 @@ import Wxios from './Wxios'
 import defaults from './defaults'
 import utils from './utils'
 interface defaultConfig {
-
+    url: '',
 }
 function createInstance(defaultConfig: defaultConfig): Wxios {
     var context:Wxios = new Wxios(defaultConfig);
